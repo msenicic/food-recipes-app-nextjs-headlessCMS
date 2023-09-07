@@ -1,0 +1,80 @@
+.recipes {
+    padding: 50px 20px;
+
+    .title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .products {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -10px;
+    
+        .product {
+            padding: 0 10px 20px 10px;
+            width: 100%;
+            max-width: 450px;
+    
+            @media screen and (min-width: 768px) {
+                width: 50%;
+                max-width: none;
+            }
+    
+            @media screen and (min-width: 992px) {
+                width: 33.3%;
+            }
+    
+            .inner {
+                overflow: hidden;
+                border-radius: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                
+                .image {
+                    position: relative;
+
+                    img {
+                        position: initial !important;
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                    }
+                }
+    
+                .product-details {
+                    padding: 20px 10px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+    
+                    .name {
+                        font-size: 30px;
+                        font-weight: 900;
+                        margin-bottom: 10px;
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+    
+                    .product-button {
+                        padding: 15px 30px;
+                        background-color: #d65108;
+                        border-radius: 30px;
+                        color: #fff;
+                        width: max-content;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
