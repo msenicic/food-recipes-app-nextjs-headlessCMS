@@ -23,34 +23,34 @@ export default async function Post({params:{id}}) {
             <p>Author: <span>{author_name}</span></p>
             <h1>{acf.title}</h1>
             <div className="category">
-              <span>{acf.meal_category}</span>
-              <span>{acf.meal_area}</span>
+              <div>{acf.meal_category}</div>
+              <div>{acf.meal_area}</div>
             </div>
           </div>
-          <div className="image-ingredients">
-            <div className="image">
-              {acf.meal_image ? 
-                (<Image
-                src={acf.meal_image.url}
-                alt={acf.meal_image.alt}
-                fill
-                sizes="100vw"
-                style={{
-                  objectFit: "cover"
-                }} />) : 
-                (<Image
-                src="/placeholder.png"
-                alt="Placeholder"
-                fill
-                sizes="100vw"
-                style={{
-                  objectFit: "cover"
-                }} />)
-              }
-            </div>
-            <div className="instructions">
+          <div className="insturctions">
+            <div className="image-ingredients">
+              <div className="image">
+                {acf.meal_image ? 
+                  (<Image
+                  src={acf.meal_image.url}
+                  alt={acf.meal_image.alt}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover"
+                  }} />) : 
+                  (<Image
+                  src="/placeholder.png"
+                  alt="Placeholder"
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover"
+                  }} />)
+                }
+              </div>
               <div className="ingredients">
-                <div className="title">
+                <div className="heading">
                   <p>Ingredients:</p>
                 </div>
                 {acf.ingredients.map((item, id) => (
@@ -59,12 +59,12 @@ export default async function Post({params:{id}}) {
                   </div>
                 ))}
               </div>
-              <div className="instruction">
-                <div className="title">
+            </div>
+            <div className="instructions">
+                <div className="heading">
                     <p>Instructions:</p>
                 </div>
                 <div dangerouslySetInnerHTML={ {__html: acf.instructions} }/>
-              </div>
             </div>
           </div>
         </div>
